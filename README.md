@@ -96,7 +96,7 @@ We also plotted the distribution of first blood kills across both winning and lo
 
 ## Assesssment of Missingness
 
-## Framing a Prediction Model
+## Hypothesis Testing
 
 <b> Question: </b> Does getting the first blood increase a team's chances of winning?
 
@@ -126,8 +126,28 @@ After conducting our test, we obtained a p-value of <b> 0.0</b>. This is much be
 
 
 Now that we know that there may be a relationship between getting a first blood and winning the game, we can dive deeper into our analysis to observe the potential impact of each position on the overall outcome of the game.
+
+## Framing a Prediction Model
+
+Our results from the previous part indicate that there may be a significant relationship between getting the first blood and winning the game. Now, we will explore the specific position that obtained the first blood and their impact on the game. We will also look at the first blood victims, which will tell us which position was the victim of the first blood.In addition, we will look at the specific champion they were playing to see if that may also have an effect. Our goal is to predict whether a team wins or loses based on which role gets the first blood, and which role was the victim of the first blood.
+
 ## Baseline Model
+
+Our baseline model will first use the first blood victim, as well as the position they were playing and result columns, in order to try and predict whether a team wins or loses based on who was first blooded (who was killed first). All features we are observing are categorical nominal features, as they have no ordering to them.
+
+We are using 80% of our data to train the model, and 20% to test the model.
+
+To train our model, we created a preprocessing pipeline that uses one-hot-encoding to convert our categorical features to trainable values. Then, we fit the model to a Random Forest Classifier using our training data.
+
+After training the model, we tested it on our test data. It proved accurate approximately 58% of the time. This model is fairly accurate, and uses appropriate metrics to predict the outcome of the game - however, with more features the accuracy can be improved. //idk wtf im saying
 
 ## Final Model
 
+To improve our baseline model, we added several features from our original dataset that correspond to phases of the game. This features include: "golddiffat10", "xpdiffat10", "csdiffat10", "killsat10", "assistsat10", "deathsat10", "golddiffat15", "xpdiffat15", and "csdiffat15". The new features we added are all numerical and represent differences of varying game statistics between the two teams. We believe that these features will improve our model because they represent important game statistics throughout the phases of the game. For example, golddiffat10 represents the difference in gold between the two teams. If there is a high difference, that means one team is likely winning very strongly over the other at that current moment in time, which will be a large factor in determining whether that team wins overall or not. 
+
+To process these new numerical features, we standardized them through StandardScaler. //explain why this helps ?
+
+Once again, we are using 80% of our data to train the model and 20% to test.
+
+After processing all of our features, we fit the model to a Random Forest Classifier. This time, we used a Grid Search CV to obtain the best hyperparameters for our model. Once the best hyperparameters were determined, we tested our new model using our testing dataset, and we achieved an accuracy of 75%. //idk jsut explain more
 ## Fairness Analysis
