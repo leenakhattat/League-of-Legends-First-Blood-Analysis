@@ -17,9 +17,9 @@ Once cleaned, our players subset had 104,910 rows and 3 columns to analyze. Our 
 <b> Descriptions of Columns: </b>
 
 <ul>
-    <li> "firstbloodkill": 1 if the player obtained the first blood kill, 0 otherwise </li>
-    <li> "position": Represents the position each player was playing. Possible values include top, mid, jng, bot, and sup, which represent the 5 roles in the game. </li>
-    <li> "result": 1 if the team won, 0 otherwise </li>
+    <li> <b> "firstbloodkill": </b> 1 if the player obtained the first blood kill, 0 otherwise </li>
+    <li> <b> "position": </b> Represents the position each player was playing. Possible values include top, mid, jng, bot, and sup, which represent the 5 roles in the game. </li>
+    <li> <b> "result": </b> 1 if the team won, 0 otherwise </li>
 </ul>
 
 For our teams analysis, we will use the same columns as above, except we will use "firstblood" instead of "firstbloodkill". This column represents whether or not the team got the first blood, using a 1 if they did and 0 if not.
@@ -51,6 +51,7 @@ Teams Dataset:
 
 
 Players Dataset: 
+
 |    |   result |   firstbloodkill | position   |
 |---:|---------:|-----------------:|:-----------|
 |  0 |        1 |                0 | top        |
@@ -65,6 +66,7 @@ Using the cleaned datasets, we looked at relationships between variables.
 
 Using our players data, we created a pivot table that shows us the relationship between position, result, and number of first bloods. To do this, we used position as the index, result as the columns, and first blood kills as the values to aggregate. The table shows us that there are more first bloods overall in winning games, which is consistent with our univariate analysis shown below, and also shows us which role has the most first bloods overall for both winning and losing games.
 
+
 | position   |    0 |    1 |
 |:-----------|-----:|-----:|
 | bot        | 1001 | 1718 |
@@ -72,6 +74,7 @@ Using our players data, we created a pivot table that shows us the relationship 
 | mid        |  738 | 1179 |
 | sup        |  433 |  661 |
 | top        |  656 | 1028 |
+
 ### Univariate Analysis
 
 Using the teams dataset, we were able to plot the relationship between getting the first blood and winning the game. This plot shows us that winning games have a higher first blood count overall.
