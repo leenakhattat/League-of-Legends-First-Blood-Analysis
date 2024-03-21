@@ -93,7 +93,18 @@ We also plotted the distribution of first blood kills across both winning and lo
 
 <b> Alternative Hypothesis:</b> Getting the first blood will increase your chances of winning.
 
-To answer this question, we conducted a permutation test by randomly shuffling the first blood column for the teams dataset 10000 times. This allows us to see whether the difference in group means for winning vs losing games is purely due to chance, or if there is a significant relationship between first bloods and winning the game. We chose an alpha level of 0.05 for our test.
+To answer this question, we conducted a permutation test by randomly shuffling the first blood column for the teams dataset 10000 times. This allows us to see whether the difference in group means for winning vs losing games is purely due to chance, or if there is a significant relationship between first bloods and winning the game. We then used difference of group means to calculate the first blood percentages of winning games and losing games. We chose an alpha level of 0.05 to conduct our test.
+
+Below is an example of one run of the permutation test. We can see that there is a difference between the actual values and shuffled values - losing games have approximately a 39% first blood rate, while winning games have approximately 61%. However, when shuffled, both winning and losing games have 50% first blood rates. Our test statistic is the winning games FB rate - losing games FB rate. The observed value of this statistic was <b> 0.22</b>.
+We repeated this permutation 10,000 times, and calculated the average amount of times that our permutation had results greater than or equal to our observed value.
+
+|   result |   firstblood |   shuffled |
+|---------:|-------------:|-----------:|
+|        0 |     0.385209 |   0.498142 |
+|        1 |     0.612906 |   0.499952 |
+
+
+After conducting our test, we obtained a p-value of <b> 0.0</b>. This is much below the threshold of 0.05, indicating there may be a significant relationship between obtaining the first blood and winning the game. From our empirical distribution shown below, we can see that our observed value is much greater than any of the values obtained in our permutation test.
 
 <iframe
   src="assets/empirical_dist.html"
@@ -101,8 +112,6 @@ To answer this question, we conducted a permutation test by randomly shuffling t
   height="600"
   frameborder="0"
 ></iframe>
-
-After conducting our test, we obtained a p-value of <b> 0.0 </b>. This is much below the threshold of 0.05, indicating there may be a significant relationship between obtaining the first blood and winning the game. From our empirical distribution shown below, we can see that our observed value is much greater than any of the values obtained in our permutation test.
 
 
 Now that we know that there may be a relationship between getting a first blood and winning the game, we can dive deeper into our analysis to observe the potential impact of each position on the overall outcome of the game.
