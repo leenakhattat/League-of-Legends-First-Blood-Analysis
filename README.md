@@ -78,10 +78,21 @@ Using our players data, we created a pivot table that shows us the relationship 
 ### Univariate Analysis
 
 Using the teams dataset, we were able to plot the relationship between getting the first blood and winning the game. This plot shows us that winning games have a higher first blood count overall.
-
+<iframe
+  src="assets/univariate1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 ### Bivariate Analysis
 
 We also plotted the distribution of first blood kills across both winning and losing games, and across all positions using our pivot table described above. This plot shows the same general trend across all roles for both winning and losing games, and also shows that ADCs and junglers have the highest first bloods overall.
+<iframe
+  src="assets/bivariate2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Assesssment of Missingness
 
