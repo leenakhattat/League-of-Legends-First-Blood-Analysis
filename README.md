@@ -157,17 +157,17 @@ We are using 80% of our data to train the model, and 20% to test the model.
 
 To train our model, we created a preprocessing pipeline that uses one-hot-encoding to convert our categorical features to trainable values. Then, we fit the model to a Random Forest Classifier using our training data.
 
-After training the model, we tested it on our test data. It proved accurate approximately 58% of the time. This model is fairly accurate, and uses appropriate metrics to predict the outcome of the game - however, with more features the accuracy can be improved. //idk wtf im saying
+After training the model, we tested it on our test data. It proved accurate approximately 58% of the time. This model is fairly accurate, and uses appropriate metrics to predict the outcome of the game - however, with more features the accuracy can be improved.
 
 ## Final Model
 
 To improve our baseline model, we added several features from our original dataset that correspond to phases of the game. This features include: "golddiffat10", "xpdiffat10", "csdiffat10", "killsat10", "assistsat10", "deathsat10", "golddiffat15", "xpdiffat15", and "csdiffat15". The new features we added are all numerical and represent differences of varying game statistics between the two teams. We believe that these features will improve our model because they represent important game statistics throughout the phases of the game. For example, golddiffat10 represents the difference in gold between the two teams. If there is a high difference, that means one team is likely winning very strongly over the other at that current moment in time, which will be a large factor in determining whether that team wins overall or not. 
 
-To process these new numerical features, we standardized them through StandardScaler. //explain why this helps ?
+To process these new numerical features, we standardized them through StandardScaler.
 
 Once again, we are using 80% of our data to train the model and 20% to test.
 
-After processing all of our features, we fit the model to a Random Forest Classifier. This time, we used a Grid Search CV to obtain the best hyperparameters for our model. Once the best hyperparameters were determined, we tested our new model using our testing dataset, and we achieved an accuracy of 75%. //idk jsut explain more
+After processing all of our features, we fit the model to a Random Forest Classifier. This time, we used a Grid Search CV to obtain the best hyperparameters for our model. Once the best hyperparameters were determined, we tested our new model using our testing dataset, and we achieved an accuracy of 75%.
 
 ## Fairness Analysis
 
