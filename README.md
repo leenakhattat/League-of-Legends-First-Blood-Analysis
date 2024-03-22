@@ -43,7 +43,9 @@ First, we dropped all unnecessary columns in both our team and player subset of 
 
 Then, we created 2 subsets of our data: players and teams. We will use the teams subset to establish a relationship between first bloods and game result. If we observe a relationship, we can use the players subset to analyze each position's first blood impact on the overall result of the game.
 
-Lastly, we dropped all null values. The very last match had null values for all the first blood values, so we were unable to use that match for our analysis.
+Afterwards, we dropped all null values. The very last match had null values for all the first blood values, so we were unable to use that match for our analysis.
+
+Lastly, we converted all floating points to integers so that our row values were consistent across all columns.
 
 The resulting datasets are shown below:
 
