@@ -8,7 +8,7 @@ This is a DSC80 final project that analyzes the relationship between position an
 
 We are analyzing a League of Legends dataset that contains data from professional competitive League of Legends matches. This dataset contains around 130 features ranging from creep score to dragon data to first blood participation - essentially any metric that can be measured during a League of Legends profesional match. Additionally, the dataset contains over 12,000 rows, with each unique match representing 12 rows: 10 for the players and 2 for the teams.
 
-Using this data, we will analyze two subsets of the data: teams that obtained a first blood, and players that obtained a first blood. We will use the teams subset to analyze whether or not there is a relationship between obtaining a first blood and winning the match. To dig deeper into our data, we will then try to see if there is a relationship between the position that got the first blood and the result of the match using a subset of the data that only includes players. We are interested in these two features specifically because we are curious on whether getting the first blood may change the outcome of the game. Additionally, we want to observe the potential impact of each position getting the first blood: for example, does it have more of an impact on the game if the jungler gets the first blood?
+Using this data, we will analyze two subsets of the data: <strong>teams</strong> and <strong>players</strong>. We will use the teams subset to analyze whether or not there is a relationship between obtaining a first blood and winning the match. To dig deeper into our data, we will then try to see if there is a relationship between the position that got the first blood and the result of the match using a subset of the data that only includes players. We are interested in these two features specifically because we are curious on whether getting the first blood may change the outcome of the game. Additionally, we want to observe the potential impact of each position getting the first blood: for example, does it have more of an impact on the game if the jungler gets the first blood?
 
 The specific columns we are most interested in for our players analysis are: "firstbloodkill", "position", and "result". These columns represent which position obtained the first blood, the side they played on, and the overall result of the game. This will allow us to analyze how impactful each position's first blood is to winning the game. For our teams analysis, we will analyze the same columns, except we will use "firstblood" rather than "firstbloodkill".
 
@@ -26,8 +26,8 @@ For our teams analysis, we will use the same columns as above, except we will us
 
 Using this data, we will answer the question: 
 
-<strong> Does getting the first blood increase a team's chance of winning, and do different positions getting the first blood have varying
-imapcts on the overall game? </strong>
+<strong> <blockquote> Does getting the first blood increase a team's chance of winning, and do different positions getting the first blood have varying
+imapcts on the overall game? </strong> </blockquote>
 
 ## Data Cleaning and Exploratory Data Analysis
 
