@@ -26,8 +26,8 @@ For our teams analysis, we will use the same columns as above, except we will us
 
 Using this data, we will answer the question: 
 
-<strong> <blockquote> Does getting the first blood increase a team's chance of winning, and do different positions getting the first blood have varying
-imapcts on the overall game? </strong> </blockquote>
+<strong>Does getting the first blood increase a team's chance of winning, and do different positions getting the first blood have varying
+imapcts on the overall game? </strong>
 
 ## Data Cleaning and Exploratory Data Analysis
 
