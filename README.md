@@ -176,3 +176,9 @@ To analyze the fairness of our model, we will compare "lower" level games to the
 <strong>Null Hypothesis: </strong> Our model is fair. Its accuracy for higher level professional matches is similar to the accuracy for lower level matches.
 
 <strong>Alternative Hypothesis: </strong> Our model is NOT fair. Its accuracy for higher level professional matches is not similar to the accuracy for lower level matches.
+
+We will calculate the difference in the precision of both models in order to determine fairness.
+
+To do this, we ran a permutation test to calculate the absolute difference in the precision of the model after predicting both the spring split and finals split. We use an alpha level of 0.05 to do our analysis.
+
+After running the permutation test 1000 times, we observe a p-value of <strong>0.23</strong>. This is significantly higher than the threshold of 0.05, so we fail to reject the null hypothesis. This means that it is likely our model is fair across different groups of data.
