@@ -23,6 +23,7 @@ Once cleaned, our players subset had 104,910 rows and 3 columns to analyze. Our 
 </ul>
 
 For our teams analysis, we will use the following:
+
 <strong> Descriptions of Columns: </strong>
 
 <ul>
