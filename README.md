@@ -1,8 +1,8 @@
 
-# League of Legends Match Predictions
+# League of Legends First Blood Analysis
 This is a DSC80 final project that analyzes the relationship between position and first blood kills, and tries to use these two features to predict the outcome of a professional League of Legends match.
 
-<b> Names: </b> Arnav Saxena, Leena Khattat
+<strong> Names: </strong> Arnav Saxena, Leena Khattat
 
 ## Introduction
 
@@ -14,20 +14,20 @@ The specific columns we are most interested in for our players analysis are: "fi
 
 Once cleaned, our players subset had 104,910 rows and 3 columns to analyze. Our teams subset had 20984 rows and 2 columns.
 
-<b> Descriptions of Columns: </b>
+<strong> Descriptions of Columns: </strong>
 
 <ul>
-    <li> <b> "firstbloodkill": </b> 1 if the player obtained the first blood kill, 0 otherwise </li>
-    <li> <b> "position": </b> Represents the position each player was playing. Possible values include top, mid, jng, bot, and sup, which represent the 5 roles in the game. </li>
-    <li> <b> "result": </b> 1 if the team won, 0 otherwise </li>
+    <li> <strong> "firstbloodkill": </strong> 1 if the player obtained the first blood kill, 0 otherwise </li>
+    <li> <strong> "position": </strong> Represents the position each player was playing. Possible values include top, mid, jng, bot, and sup, which represent the 5 roles in the game. </li>
+    <li> <strong> "result": </strong> 1 if the team won, 0 otherwise </li>
 </ul>
 
 For our teams analysis, we will use the same columns as above, except we will use "firstblood" instead of "firstbloodkill". This column represents whether or not the team got the first blood, using a 1 if they did and 0 if not.
 
 Using this data, we will answer the question: 
 
-<b> Does getting the first blood increase a team's chance of winning, and do different positions getting the first blood have varying
-imapcts on the overall game? </b>
+<strong> Does getting the first blood increase a team's chance of winning, and do different positions getting the first blood have varying
+imapcts on the overall game? </strong>
 
 ## Data Cleaning and Exploratory Data Analysis
 
@@ -98,15 +98,15 @@ We also plotted the distribution of first blood kills across both winning and lo
 
 ## Hypothesis Testing
 
-<b> Question: </b> Does getting the first blood increase a team's chances of winning?
+<strong> Question: </strong> Does getting the first blood increase a team's chances of winning?
 
-<b> Null Hypothesis:</b> Getting the first blood will not increase your chances of winning.
+<strong> Null Hypothesis:</strong> Getting the first blood will not increase your chances of winning.
 
-<b> Alternative Hypothesis:</b> Getting the first blood will increase your chances of winning.
+<strong> Alternative Hypothesis:</strong> Getting the first blood will increase your chances of winning.
 
 To answer this question, we conducted a permutation test by randomly shuffling the first blood column for the teams dataset 10000 times. This allows us to see whether the difference in group means for winning vs losing games is purely due to chance, or if there is a significant relationship between first bloods and winning the game. We then used difference of group means to calculate the first blood percentages of winning games and losing games. We chose an alpha level of 0.05 to conduct our test.
 
-Below is an example of one run of the permutation test. We can see that there is a difference between the actual values and shuffled values - losing games have approximately a 39% first blood rate, while winning games have approximately 61%. However, when shuffled, both winning and losing games have 50% first blood rates. Our test statistic is the winning games FB rate - losing games FB rate. The observed value of this statistic was <b> 0.22</b>.
+Below is an example of one run of the permutation test. We can see that there is a difference between the actual values and shuffled values - losing games have approximately a 39% first blood rate, while winning games have approximately 61%. However, when shuffled, both winning and losing games have 50% first blood rates. Our test statistic is the winning games FB rate - losing games FB rate. The observed value of this statistic was <strong> 0.22</strong>.
 We repeated this permutation 10,000 times, and calculated the average amount of times that our permutation had results greater than or equal to our observed value.
 
 |   result |   firstblood |   shuffled |
@@ -115,7 +115,7 @@ We repeated this permutation 10,000 times, and calculated the average amount of 
 |        1 |     0.612906 |   0.499952 |
 
 
-After conducting our test, we obtained a p-value of <b> 0.0</b>. This is much below the threshold of 0.05, indicating there may be a significant relationship between obtaining the first blood and winning the game. From our empirical distribution shown below, we can see that our observed value is much greater than any of the values obtained in our permutation test.
+After conducting our test, we obtained a p-value of <strong> 0.0</strong>. This is much below the threshold of 0.05, indicating there may be a significant relationship between obtaining the first blood and winning the game. From our empirical distribution shown below, we can see that our observed value is much greater than any of the values obtained in our permutation test.
 
 <iframe
   src="assets/empirical_dist.html"
