@@ -151,23 +151,21 @@ Our results from the previous part indicate that there may be a significant rela
 
 ## Baseline Model
 
-Our baseline model will first use the first blood victim, as well as the position they were playing and result columns, in order to try and predict whether a team wins or loses based on who was first blooded (who was killed first). All features we are observing are categorical nominal features, as they have no ordering to them.
+The baseline model focuses on predicting match outcomes based on the occurrence of first blood events, the positions of the players involved, and the champions played. We classify all variables as categorical and nominal, indicating no inherent order among the categories. The model splits the data into an 80% training set and a 20% test set.
 
-We are using 80% of our data to train the model, and 20% to test the model.
+For preprocessing, we employ a one-hot encoding strategy within a pipeline to transform categorical inputs into a machine-readable format. We then use a Random Forest Classifier to learn the patterns in the training data.
 
-To train our model, we created a preprocessing pipeline that uses one-hot-encoding to convert our categorical features to trainable values. Then, we fit the model to a Random Forest Classifier using our training data.
-
-After training the model, we tested it on our test data. It proved accurate approximately 58% of the time. This model is fairly accurate, and uses appropriate metrics to predict the outcome of the game - however, with more features the accuracy can be improved.
+Upon evaluation, the baseline model achieves an accuracy of approximately 58% on the test dataset. While this initial model offers a reasonable prediction capability, it suggests room for enhancement by incorporating additional, potentially predictive features.
 
 ## Final Model
 
-To improve our baseline model, we added several features from our original dataset that correspond to phases of the game. This features include: "golddiffat10", "xpdiffat10", "csdiffat10", "killsat10", "assistsat10", "deathsat10", "golddiffat15", "xpdiffat15", and "csdiffat15". The new features we added are all numerical and represent differences of varying game statistics between the two teams. We believe that these features will improve our model because they represent important game statistics throughout the phases of the game. For example, golddiffat10 represents the difference in gold between the two teams. If there is a high difference, that means one team is likely winning very strongly over the other at that current moment in time, which will be a large factor in determining whether that team wins overall or not. 
+To refine our baseline model, we incorporate a broader set of features, including early-game statistics such as gold, experience (XP), and creep score (CS) differences at the 10 and 15-minute marks, alongside early-game kill, assist, and death counts. These additional numerical features, indicative of early-game performance, are standardized using a StandardScaler to normalize their scale for model training.
 
-To process these new numerical features, we standardized them through StandardScaler.
+The inclusion of both game-phase statistical differences and initial player and champion information aims to create a more nuanced prediction model. By analyzing these early-game indicators, we hypothesize that our model can more accurately predict overall match outcomes, given their significant impact on the game's trajectory.
 
-Once again, we are using 80% of our data to train the model and 20% to test.
+Using an 80/20 train/test split and after fine-tuning through a grid search to optimize the Random Forest Classifier's hyperparameters, our enhanced model demonstrates a marked improvement, with an accuracy of 75% on the test set. This increase not only underscores the value of incorporating game-phase dynamics into our predictive framework but also highlights the potential for even further model refinement with additional data and analytical techniques.
 
-After processing all of our features, we fit the model to a Random Forest Classifier. This time, we used a Grid Search CV to obtain the best hyperparameters for our model. Once the best hyperparameters were determined, we tested our new model using our testing dataset, and we achieved an accuracy of 75%.
+The progression from our baseline to the final model illustrates the impact of integrating comprehensive game dynamics and statistical indicators on predictive accuracy. By moving beyond first blood events to include early-game performance metrics, we've significantly improved our ability to forecast match outcomes. This reinforces the critical role of feature selection and optimization in building effective predictive models in the context of competitive gaming analytics.
 
 ## Fairness Analysis
 
