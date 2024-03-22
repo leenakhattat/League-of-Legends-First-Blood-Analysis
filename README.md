@@ -66,11 +66,11 @@ Players Dataset:
 |  3 |        1 |                0 | bot        |
 |  4 |        1 |                0 | sup        |
 
-Using the cleaned datasets, we looked at relationships between variables.
+Using the cleaned datasets, we will look at relationships between variables.
 
 ## Interesting Aggregations
 
-Using our players data, we created a pivot table that shows us the relationship between position, result, and number of first bloods. To do this, we used position as the index, result as the columns, and first blood kills as the values to aggregate. The table shows us that there are more first bloods overall in winning games, which is consistent with our univariate analysis shown below, and also shows us which role has the most first bloods overall for both winning and losing games.
+Using the players subset, we created a pivot table that shows us the relationship between position, result, and number of first bloods. To do this, we used position as the index, result as the columns, and first blood kills as the values to aggregate. The table shows us that there are more first bloods overall in winning games, which is consistent with our univariate analysis shown below, and also shows us which role has the most first bloods overall for both winning and losing games.
 
 
 | position   |    0 |    1 |
@@ -106,7 +106,7 @@ We also plotted the distribution of first blood kills across both winning and lo
 
 <strong> Question: </strong> Does getting the first blood increase a team's chances of winning?
 
-<strong> Null Hypothesis:</strong> Getting the first blood will not increase your chances of winning.
+<strong> Null Hypothesis:</strong> Getting the first blood will <strong>not</strong> increase your chances of winning.
 
 <strong> Alternative Hypothesis:</strong> Getting the first blood will increase your chances of winning.
 
