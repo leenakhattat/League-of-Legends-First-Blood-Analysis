@@ -6,7 +6,7 @@ This is a DSC80 final project that analyzes the relationship between position an
 
 ## Introduction
 
-We are analyzing a League of Legends dataset that contains data from professional competitive League of Legends matches. This dataset contains around 130 features ranging from creep score to dragon data to first blood participation - essentially any metric that can be measured during a League of Legends profesional match. Additionally, the dataset contains over 12,000 rows, with each unique match representing 12 rows: 10 for the players and 2 for the teams.
+We will be analyzing a League of Legends dataset that contains data from professional competitive League of Legends matches. This dataset contains around 130 features ranging from creep score to dragon data to first blood participation - essentially any metric that can be measured during a League of Legends profesional match. Additionally, the dataset contains over 12,000 rows, with each unique match representing 12 rows: 10 for the players and 2 for the teams.
 
 Using this data, we will analyze two subsets of the data: <strong>teams</strong> and <strong>players</strong>. We will use the teams subset to analyze whether or not there is a relationship between obtaining a first blood and winning the match. To dig deeper into our data, we will then try to see if there is a relationship between the position that got the first blood and the result of the match using a subset of the data that only includes players. We are interested in these two features specifically because we are curious on whether getting the first blood may change the outcome of the game. Additionally, we want to observe the potential impact of each position getting the first blood: for example, does it have more of an impact on the game if the jungler gets the first blood?
 
@@ -14,7 +14,7 @@ The specific columns we are most interested in for our players analysis are: "fi
 
 Once cleaned, our players subset had 104,910 rows and 3 columns to analyze. Our teams subset had 20984 rows and 2 columns.
 
-<strong> Descriptions of Columns: </strong>
+<strong> Descriptions of Columns for Players Subset: </strong>
 
 <ul>
     <li> <strong> "firstbloodkill": </strong> 1 if the player obtained the first blood kill, 0 otherwise </li>
@@ -24,7 +24,7 @@ Once cleaned, our players subset had 104,910 rows and 3 columns to analyze. Our 
 
 For our teams analysis, we will use the following:
 
-<strong> Descriptions of Columns: </strong>
+<strong> Descriptions of Columns for Teams subset: </strong>
 
 <ul>
     <li> <strong> "firstblood": </strong> 1 if the team obtained the first blood, 0 otherwise </li>
@@ -38,6 +38,7 @@ imapcts on the overall game? </strong>
 
 ## Data Cleaning and Exploratory Data Analysis
 
+### Cleaning our data
 First, we dropped all unnecessary columns in both our team and player subset of the datasets.
 
 Then, we created 2 subsets of our data: players and teams. We will use the teams subset to establish a relationship between first bloods and game result. If we observe a relationship, we can use the players subset to analyze each position's first blood impact on the overall result of the game.
@@ -69,7 +70,7 @@ Players Dataset:
 
 Using the cleaned datasets, we will look at relationships between variables.
 
-## Interesting Aggregations
+### Interesting Aggregations
 
 Using the players subset, we created a pivot table that shows us the relationship between position, result, and number of first bloods. To do this, we used position as the index, result as the columns, and first blood kills as the values to aggregate. The table shows us that there are more first bloods overall in winning games, which is consistent with our univariate analysis shown below, and also shows us which role has the most first bloods overall for both winning and losing games.
 
@@ -91,6 +92,7 @@ Using the teams dataset, we were able to plot the relationship between getting t
   height="600"
   frameborder="0"
 ></iframe>
+
 ### Bivariate Analysis
 
 We also plotted the distribution of first blood kills across both winning and losing games, and across all positions using our pivot table described above. This plot shows the same general trend across all roles for both winning and losing games, and also shows that ADCs and junglers have the highest first bloods overall.
@@ -157,4 +159,10 @@ To process these new numerical features, we standardized them through StandardSc
 Once again, we are using 80% of our data to train the model and 20% to test.
 
 After processing all of our features, we fit the model to a Random Forest Classifier. This time, we used a Grid Search CV to obtain the best hyperparameters for our model. Once the best hyperparameters were determined, we tested our new model using our testing dataset, and we achieved an accuracy of 75%. //idk jsut explain more
+
 ## Fairness Analysis
+
+To analyze the fairness of our model, we will compare "lower" level games to the final matches of the series to assess whether the model performs similarly on the two splits. This will allow us to test the accuracy of our model across varying levels of professional gameplay.
+
+<strong>Null Hypothesis: </strong> Our model is fair. Its accuracy for higher level professional matches is similar to the accuracy for lower level matches.
+<strong>Alternative Hypothesis: </strong> Our model is NOT fair. Its accuracy for higher level professional matches is not similar to the accuracy for lower level matches.
