@@ -105,6 +105,13 @@ We also plotted the distribution of first blood kills across both winning and lo
 
 ## Assesssment of Missingness
 
+### NMAR Analysis
+While conducting our analysis, we noticed the dragons and firstdragon columns had many missing values, much more than the other columns. Dragons are an important part of the game, providing powerful buffs to the team that slays them, so it is unlikely that they are missing by design because they can control the pace of the game. However, there could be other reasons that the columns include missing values, such as technical issues with the data collection methodology. Additionally, if the dataset is focusing on match analysis in which objective control is not being considered, the dragons may be missing in this context because it is not being factored into the outcome of the match. If the data is missing due to this reasoning, then additional data could be provided to make it MAR, such as what the analysis will be used for, such as if it is objective focused or not objective focused.
+
+### Missingness Dependency
+Another column that had a significant amount of missing values is the "killsat15" column, which represents how many kills each player had at the 15 minute mark. 
+
+
 ## Hypothesis Testing
 
 <strong> Question: </strong> Does getting the first blood increase a team's chances of winning?
@@ -165,4 +172,5 @@ After processing all of our features, we fit the model to a Random Forest Classi
 To analyze the fairness of our model, we will compare "lower" level games to the final matches of the series to assess whether the model performs similarly on the two splits. This will allow us to test the accuracy of our model across varying levels of professional gameplay.
 
 <strong>Null Hypothesis: </strong> Our model is fair. Its accuracy for higher level professional matches is similar to the accuracy for lower level matches.
+
 <strong>Alternative Hypothesis: </strong> Our model is NOT fair. Its accuracy for higher level professional matches is not similar to the accuracy for lower level matches.
