@@ -39,3 +39,6 @@ footer a {
 footer a:nth-child(2) {
     color: black; /* Change to the desired color */
 }
+.container {
+    max-width: none !important;
+}
