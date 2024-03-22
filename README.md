@@ -22,7 +22,13 @@ Once cleaned, our players subset had 104,910 rows and 3 columns to analyze. Our 
     <li> <strong> "result": </strong> 1 if the team won, 0 otherwise </li>
 </ul>
 
-For our teams analysis, we will use the same columns as above, except we will use "firstblood" instead of "firstbloodkill". This column represents whether or not the team got the first blood, using a 1 if they did and 0 if not.
+For our teams analysis, we will use the following:
+<strong> Descriptions of Columns: </strong>
+
+<ul>
+    <li> <strong> "firstblood": </strong> 1 if the team obtained the first blood, 0 otherwise </li>
+    <li> <strong> "result": </strong> 1 if the team won, 0 otherwise </li>
+</ul>
 
 Using this data, we will answer the question: 
 
